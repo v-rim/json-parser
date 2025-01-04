@@ -26,6 +26,8 @@ def preprocess(source):
             preprocessed += re.sub(r"\s+", "", c)
         else:
             preprocessed += c
+    if inside_quotes:
+        raise Exception("Unmatched quotes")
     return preprocessed
 
 
